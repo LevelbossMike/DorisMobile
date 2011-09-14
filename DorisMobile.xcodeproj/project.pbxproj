@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CD003F41420C90100B2C159 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F31420C90100B2C159 /* UIKit.framework */; };
+		4CD003F61420C90100B2C159 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F51420C90100B2C159 /* Foundation.framework */; };
+		4CD003F81420C90100B2C159 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F71420C90100B2C159 /* CoreGraphics.framework */; };
+		4CD003FE1420C90100B2C159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CD003FC1420C90100B2C159 /* InfoPlist.strings */; };
+		4CD004001420C90100B2C159 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD003FF1420C90100B2C159 /* main.m */; };
+		4CD004041420C90100B2C159 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD004031420C90100B2C159 /* AppDelegate.m */; };
+		4CD004071420C90100B2C159 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD004051420C90100B2C159 /* MainStoryboard_iPhone.storyboard */; };
+		4CD0040A1420C90100B2C159 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD004081420C90100B2C159 /* MainStoryboard_iPad.storyboard */; };
+		4CD0040D1420C90100B2C159 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0040C1420C90100B2C159 /* ViewController.m */; };
+		4CD004151420C90100B2C159 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD004141420C90100B2C159 /* SenTestingKit.framework */; };
+		4CD004161420C90100B2C159 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F31420C90100B2C159 /* UIKit.framework */; };
+		4CD004171420C90100B2C159 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F51420C90100B2C159 /* Foundation.framework */; };
+		4CD0041F1420C90100B2C159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CD0041D1420C90100B2C159 /* InfoPlist.strings */; };
+		4CD004221420C90100B2C159 /* DorisMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD004211420C90100B2C159 /* DorisMobileTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CD004181420C90100B2C159 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CD003E61420C90100B2C159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CD003EE1420C90100B2C159;
+			remoteInfo = DorisMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CD003EF1420C90100B2C159 /* DorisMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DorisMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD003F31420C90100B2C159 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CD003F51420C90100B2C159 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CD003F71420C90100B2C159 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CD003FB1420C90100B2C159 /* DorisMobile-Info.plist */ = {isa = PBXFileReference; path = "DorisMobile-Info.plist"; sourceTree = "<group>"; };
+		4CD003FD1420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CD003FF1420C90100B2C159 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CD004011420C90100B2C159 /* DorisMobile-Prefix.pch */ = {isa = PBXFileReference; path = "DorisMobile-Prefix.pch"; sourceTree = "<group>"; };
+		4CD004021420C90100B2C159 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		4CD004031420C90100B2C159 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4CD004061420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		4CD004091420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4CD0040B1420C90100B2C159 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		4CD0040C1420C90100B2C159 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4CD004131420C90100B2C159 /* DorisMobileTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DorisMobileTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD004141420C90100B2C159 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4CD0041C1420C90100B2C159 /* DorisMobileTests-Info.plist */ = {isa = PBXFileReference; path = "DorisMobileTests-Info.plist"; sourceTree = "<group>"; };
+		4CD0041E1420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CD004201420C90100B2C159 /* DorisMobileTests.h */ = {isa = PBXFileReference; path = DorisMobileTests.h; sourceTree = "<group>"; };
+		4CD004211420C90100B2C159 /* DorisMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DorisMobileTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CD003EC1420C90100B2C159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD003F41420C90100B2C159 /* UIKit.framework in Frameworks */,
+				4CD003F61420C90100B2C159 /* Foundation.framework in Frameworks */,
+				4CD003F81420C90100B2C159 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD0040F1420C90100B2C159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD004151420C90100B2C159 /* SenTestingKit.framework in Frameworks */,
+				4CD004161420C90100B2C159 /* UIKit.framework in Frameworks */,
+				4CD004171420C90100B2C159 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CD003E41420C90100B2C159 = {
+			isa = PBXGroup;
+			children = (
+				4CD003F91420C90100B2C159 /* DorisMobile */,
+				4CD0041A1420C90100B2C159 /* DorisMobileTests */,
+				4CD003F21420C90100B2C159 /* Frameworks */,
+				4CD003F01420C90100B2C159 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CD003F01420C90100B2C159 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CD003EF1420C90100B2C159 /* DorisMobile.app */,
+				4CD004131420C90100B2C159 /* DorisMobileTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CD003F21420C90100B2C159 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CD003F31420C90100B2C159 /* UIKit.framework */,
+				4CD003F51420C90100B2C159 /* Foundation.framework */,
+				4CD003F71420C90100B2C159 /* CoreGraphics.framework */,
+				4CD004141420C90100B2C159 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CD003F91420C90100B2C159 /* DorisMobile */ = {
+			isa = PBXGroup;
+			children = (
+				4CD004021420C90100B2C159 /* AppDelegate.h */,
+				4CD004031420C90100B2C159 /* AppDelegate.m */,
+				4CD004051420C90100B2C159 /* MainStoryboard_iPhone.storyboard */,
+				4CD004081420C90100B2C159 /* MainStoryboard_iPad.storyboard */,
+				4CD0040B1420C90100B2C159 /* ViewController.h */,
+				4CD0040C1420C90100B2C159 /* ViewController.m */,
+				4CD003FA1420C90100B2C159 /* Supporting Files */,
+			);
+			path = DorisMobile;
+			sourceTree = "<group>";
+		};
+		4CD003FA1420C90100B2C159 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CD003FB1420C90100B2C159 /* DorisMobile-Info.plist */,
+				4CD003FC1420C90100B2C159 /* InfoPlist.strings */,
+				4CD003FF1420C90100B2C159 /* main.m */,
+				4CD004011420C90100B2C159 /* DorisMobile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CD0041A1420C90100B2C159 /* DorisMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CD004201420C90100B2C159 /* DorisMobileTests.h */,
+				4CD004211420C90100B2C159 /* DorisMobileTests.m */,
+				4CD0041B1420C90100B2C159 /* Supporting Files */,
+			);
+			path = DorisMobileTests;
+			sourceTree = "<group>";
+		};
+		4CD0041B1420C90100B2C159 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CD0041C1420C90100B2C159 /* DorisMobileTests-Info.plist */,
+				4CD0041D1420C90100B2C159 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CD003EE1420C90100B2C159 /* DorisMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD004251420C90100B2C159 /* Build configuration list for PBXNativeTarget "DorisMobile" */;
+			buildPhases = (
+				4CD003EB1420C90100B2C159 /* Sources */,
+				4CD003EC1420C90100B2C159 /* Frameworks */,
+				4CD003ED1420C90100B2C159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DorisMobile;
+			productName = DorisMobile;
+			productReference = 4CD003EF1420C90100B2C159 /* DorisMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CD004121420C90100B2C159 /* DorisMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD004281420C90100B2C159 /* Build configuration list for PBXNativeTarget "DorisMobileTests" */;
+			buildPhases = (
+				4CD0040E1420C90100B2C159 /* Sources */,
+				4CD0040F1420C90100B2C159 /* Frameworks */,
+				4CD004101420C90100B2C159 /* Resources */,
+				4CD004111420C90100B2C159 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CD004191420C90100B2C159 /* PBXTargetDependency */,
+			);
+			name = DorisMobileTests;
+			productName = DorisMobileTests;
+			productReference = 4CD004131420C90100B2C159 /* DorisMobileTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CD003E61420C90100B2C159 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 4CD003E91420C90100B2C159 /* Build configuration list for PBXProject "DorisMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4CD003E41420C90100B2C159;
+			productRefGroup = 4CD003F01420C90100B2C159 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CD003EE1420C90100B2C159 /* DorisMobile */,
+				4CD004121420C90100B2C159 /* DorisMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CD003ED1420C90100B2C159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD003FE1420C90100B2C159 /* InfoPlist.strings in Resources */,
+				4CD004071420C90100B2C159 /* MainStoryboard_iPhone.storyboard in Resources */,
+				4CD0040A1420C90100B2C159 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD004101420C90100B2C159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD0041F1420C90100B2C159 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CD004111420C90100B2C159 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CD003EB1420C90100B2C159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD004001420C90100B2C159 /* main.m in Sources */,
+				4CD004041420C90100B2C159 /* AppDelegate.m in Sources */,
+				4CD0040D1420C90100B2C159 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD0040E1420C90100B2C159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD004221420C90100B2C159 /* DorisMobileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CD004191420C90100B2C159 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CD003EE1420C90100B2C159 /* DorisMobile */;
+			targetProxy = 4CD004181420C90100B2C159 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4CD003FC1420C90100B2C159 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CD003FD1420C90100B2C159 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CD004051420C90100B2C159 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CD004061420C90100B2C159 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4CD004081420C90100B2C159 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CD004091420C90100B2C159 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		4CD0041D1420C90100B2C159 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CD0041E1420C90100B2C159 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CD004231420C90100B2C159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CD004241420C90100B2C159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CD004261420C90100B2C159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DorisMobile/DorisMobile-Prefix.pch";
+				INFOPLIST_FILE = "DorisMobile/DorisMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4CD004271420C90100B2C159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DorisMobile/DorisMobile-Prefix.pch";
+				INFOPLIST_FILE = "DorisMobile/DorisMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4CD004291420C90100B2C159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DorisMobile.app/DorisMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DorisMobile/DorisMobile-Prefix.pch";
+				INFOPLIST_FILE = "DorisMobileTests/DorisMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4CD0042A1420C90100B2C159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DorisMobile.app/DorisMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DorisMobile/DorisMobile-Prefix.pch";
+				INFOPLIST_FILE = "DorisMobileTests/DorisMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CD003E91420C90100B2C159 /* Build configuration list for PBXProject "DorisMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD004231420C90100B2C159 /* Debug */,
+				4CD004241420C90100B2C159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD004251420C90100B2C159 /* Build configuration list for PBXNativeTarget "DorisMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD004261420C90100B2C159 /* Debug */,
+				4CD004271420C90100B2C159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4CD004281420C90100B2C159 /* Build configuration list for PBXNativeTarget "DorisMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD004291420C90100B2C159 /* Debug */,
+				4CD0042A1420C90100B2C159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CD003E61420C90100B2C159 /* Project object */;
+}
