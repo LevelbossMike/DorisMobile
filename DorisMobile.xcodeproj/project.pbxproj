@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C10100E143F3870001875E2 /* 101-gameplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C10100D143F3870001875E2 /* 101-gameplan.png */; };
 		4CD003F41420C90100B2C159 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F31420C90100B2C159 /* UIKit.framework */; };
 		4CD003F61420C90100B2C159 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F51420C90100B2C159 /* Foundation.framework */; };
 		4CD003F81420C90100B2C159 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F71420C90100B2C159 /* CoreGraphics.framework */; };
@@ -21,6 +22,16 @@
 		4CD004171420C90100B2C159 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F51420C90100B2C159 /* Foundation.framework */; };
 		4CD0041F1420C90100B2C159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CD0041D1420C90100B2C159 /* InfoPlist.strings */; };
 		4CD004221420C90100B2C159 /* DorisMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD004211420C90100B2C159 /* DorisMobileTests.m */; };
+		4CD0042C1420C90C00B2C159 /* icon_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD0042B1420C90C00B2C159 /* icon_small.png */; };
+		4CD004301420C93600B2C159 /* 74-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD0042F1420C93600B2C159 /* 74-location.png */; };
+		4CD004321420C9B400B2C159 /* libArcGIS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD004311420C9B400B2C159 /* libArcGIS.a */; };
+		4CD004341420CA5000B2C159 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD004331420CA5000B2C159 /* CoreLocation.framework */; };
+		4CD004361420CA6500B2C159 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD004351420CA6500B2C159 /* QuartzCore.framework */; };
+		4CD004381420CA7900B2C159 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD004371420CA7900B2C159 /* CoreText.framework */; };
+		4CD0043A1420CA8C00B2C159 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD004391420CA8C00B2C159 /* libstdc++.dylib */; };
+		4CD0043C1420CA9900B2C159 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD0043B1420CA9900B2C159 /* MediaPlayer.framework */; };
+		4CD0043E1420CAA500B2C159 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD0043D1420CAA500B2C159 /* MobileCoreServices.framework */; };
+		4CD004401420CAC300B2C159 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CD0043F1420CAC300B2C159 /* ArcGIS.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,26 +45,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C10100D143F3870001875E2 /* 101-gameplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "101-gameplan.png"; sourceTree = "<group>"; };
 		4CD003EF1420C90100B2C159 /* DorisMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DorisMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD003F31420C90100B2C159 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CD003F51420C90100B2C159 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CD003F71420C90100B2C159 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4CD003FB1420C90100B2C159 /* DorisMobile-Info.plist */ = {isa = PBXFileReference; path = "DorisMobile-Info.plist"; sourceTree = "<group>"; };
+		4CD003FB1420C90100B2C159 /* DorisMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DorisMobile-Info.plist"; sourceTree = "<group>"; };
 		4CD003FD1420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CD003FF1420C90100B2C159 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4CD004011420C90100B2C159 /* DorisMobile-Prefix.pch */ = {isa = PBXFileReference; path = "DorisMobile-Prefix.pch"; sourceTree = "<group>"; };
-		4CD004021420C90100B2C159 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		4CD004011420C90100B2C159 /* DorisMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DorisMobile-Prefix.pch"; sourceTree = "<group>"; };
+		4CD004021420C90100B2C159 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CD004031420C90100B2C159 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4CD004061420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		4CD004091420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		4CD0040B1420C90100B2C159 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		4CD0040B1420C90100B2C159 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4CD0040C1420C90100B2C159 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4CD004131420C90100B2C159 /* DorisMobileTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DorisMobileTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD004141420C90100B2C159 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4CD0041C1420C90100B2C159 /* DorisMobileTests-Info.plist */ = {isa = PBXFileReference; path = "DorisMobileTests-Info.plist"; sourceTree = "<group>"; };
+		4CD0041C1420C90100B2C159 /* DorisMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DorisMobileTests-Info.plist"; sourceTree = "<group>"; };
 		4CD0041E1420C90100B2C159 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4CD004201420C90100B2C159 /* DorisMobileTests.h */ = {isa = PBXFileReference; path = DorisMobileTests.h; sourceTree = "<group>"; };
+		4CD004201420C90100B2C159 /* DorisMobileTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DorisMobileTests.h; sourceTree = "<group>"; };
 		4CD004211420C90100B2C159 /* DorisMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DorisMobileTests.m; sourceTree = "<group>"; };
+		4CD0042B1420C90C00B2C159 /* icon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_small.png; sourceTree = "<group>"; };
+		4CD0042F1420C93600B2C159 /* 74-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "74-location.png"; sourceTree = "<group>"; };
+		4CD004311420C9B400B2C159 /* libArcGIS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libArcGIS.a; path = ../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib/libArcGIS.a; sourceTree = "<group>"; };
+		4CD004331420CA5000B2C159 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4CD004351420CA6500B2C159 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4CD004371420CA7900B2C159 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		4CD004391420CA8C00B2C159 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		4CD0043B1420CA9900B2C159 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4CD0043D1420CAA500B2C159 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4CD0043F1420CAC300B2C159 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/resources/ArcGIS.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +83,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD0043E1420CAA500B2C159 /* MobileCoreServices.framework in Frameworks */,
+				4CD0043C1420CA9900B2C159 /* MediaPlayer.framework in Frameworks */,
+				4CD0043A1420CA8C00B2C159 /* libstdc++.dylib in Frameworks */,
+				4CD004381420CA7900B2C159 /* CoreText.framework in Frameworks */,
 				4CD003F41420C90100B2C159 /* UIKit.framework in Frameworks */,
+				4CD004361420CA6500B2C159 /* QuartzCore.framework in Frameworks */,
 				4CD003F61420C90100B2C159 /* Foundation.framework in Frameworks */,
+				4CD004341420CA5000B2C159 /* CoreLocation.framework in Frameworks */,
 				4CD003F81420C90100B2C159 /* CoreGraphics.framework in Frameworks */,
+				4CD004321420C9B400B2C159 /* libArcGIS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +112,17 @@
 		4CD003E41420C90100B2C159 = {
 			isa = PBXGroup;
 			children = (
+				4C10100D143F3870001875E2 /* 101-gameplan.png */,
+				4CD0043F1420CAC300B2C159 /* ArcGIS.bundle */,
+				4CD0043D1420CAA500B2C159 /* MobileCoreServices.framework */,
+				4CD0043B1420CA9900B2C159 /* MediaPlayer.framework */,
+				4CD004391420CA8C00B2C159 /* libstdc++.dylib */,
+				4CD004371420CA7900B2C159 /* CoreText.framework */,
+				4CD004351420CA6500B2C159 /* QuartzCore.framework */,
+				4CD004331420CA5000B2C159 /* CoreLocation.framework */,
+				4CD004311420C9B400B2C159 /* libArcGIS.a */,
+				4CD0042F1420C93600B2C159 /* 74-location.png */,
+				4CD0042B1420C90C00B2C159 /* icon_small.png */,
 				4CD003F91420C90100B2C159 /* DorisMobile */,
 				4CD0041A1420C90100B2C159 /* DorisMobileTests */,
 				4CD003F21420C90100B2C159 /* Frameworks */,
@@ -227,6 +267,10 @@
 				4CD003FE1420C90100B2C159 /* InfoPlist.strings in Resources */,
 				4CD004071420C90100B2C159 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4CD0040A1420C90100B2C159 /* MainStoryboard_iPad.storyboard in Resources */,
+				4CD0042C1420C90C00B2C159 /* icon_small.png in Resources */,
+				4CD004301420C93600B2C159 /* 74-location.png in Resources */,
+				4CD004401420CAC300B2C159 /* ArcGIS.bundle in Resources */,
+				4C10100E143F3870001875E2 /* 101-gameplan.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +418,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DorisMobile/DorisMobile-Prefix.pch";
 				INFOPLIST_FILE = "DorisMobile/DorisMobile-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib",
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/include/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -385,7 +439,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DorisMobile/DorisMobile-Prefix.pch";
 				INFOPLIST_FILE = "DorisMobile/DorisMobile-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib",
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/include/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -443,6 +507,7 @@
 				4CD004271420C90100B2C159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CD004281420C90100B2C159 /* Build configuration list for PBXNativeTarget "DorisMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +516,7 @@
 				4CD0042A1420C90100B2C159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

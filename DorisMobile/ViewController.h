@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ArcGIS.h"
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <AGSMapViewLayerDelegate>
+@property (nonatomic, retain) IBOutlet AGSMapView *mapView;
+@property (nonatomic, retain) AGSTiledMapServiceLayer *tiledLayer;
+@property (nonatomic, retain) AGSSketchGraphicsLayer *sketchLyr;
+@property BOOL locationStatusEnabled;
+@property BOOL sketchLayerEnabled;
+
+-(IBAction)changeLayer:(id)sender;
+-(IBAction)toggleLocationService:(id)sender;
+-(IBAction)toggleSketchLayer:(id)sender;
+
 
 @end
