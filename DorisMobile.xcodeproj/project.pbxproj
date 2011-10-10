@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4C10100E143F3870001875E2 /* 101-gameplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C10100D143F3870001875E2 /* 101-gameplan.png */; };
+		4C2A3F721443365200237253 /* 186-ruler.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A3F711443365200237253 /* 186-ruler.png */; };
+		4C2A3F751443392400237253 /* clearsketchX.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A3F741443392400237253 /* clearsketchX.gif */; };
+		4C2A3F7A1443411E00237253 /* LeftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A3F781443411E00237253 /* LeftArrow.png */; };
+		4C2A3F7B1443411E00237253 /* RightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A3F791443411E00237253 /* RightArrow.png */; };
+		4C2A3F7D1443415200237253 /* EditLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A3F7C1443415200237253 /* EditLocation.png */; };
 		4CD003F41420C90100B2C159 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F31420C90100B2C159 /* UIKit.framework */; };
 		4CD003F61420C90100B2C159 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F51420C90100B2C159 /* Foundation.framework */; };
 		4CD003F81420C90100B2C159 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F71420C90100B2C159 /* CoreGraphics.framework */; };
@@ -46,6 +51,11 @@
 
 /* Begin PBXFileReference section */
 		4C10100D143F3870001875E2 /* 101-gameplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "101-gameplan.png"; sourceTree = "<group>"; };
+		4C2A3F711443365200237253 /* 186-ruler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "186-ruler.png"; sourceTree = "<group>"; };
+		4C2A3F741443392400237253 /* clearsketchX.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = clearsketchX.gif; sourceTree = "<group>"; };
+		4C2A3F781443411E00237253 /* LeftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeftArrow.png; path = ../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/resources/ArcGIS.bundle/LeftArrow.png; sourceTree = "<group>"; };
+		4C2A3F791443411E00237253 /* RightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RightArrow.png; path = ../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/resources/ArcGIS.bundle/RightArrow.png; sourceTree = "<group>"; };
+		4C2A3F7C1443415200237253 /* EditLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EditLocation.png; path = ../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/resources/ArcGIS.bundle/EditLocation.png; sourceTree = "<group>"; };
 		4CD003EF1420C90100B2C159 /* DorisMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DorisMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD003F31420C90100B2C159 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CD003F51420C90100B2C159 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +122,11 @@
 		4CD003E41420C90100B2C159 = {
 			isa = PBXGroup;
 			children = (
+				4C2A3F781443411E00237253 /* LeftArrow.png */,
+				4C2A3F791443411E00237253 /* RightArrow.png */,
+				4C2A3F741443392400237253 /* clearsketchX.gif */,
+				4C2A3F711443365200237253 /* 186-ruler.png */,
+				4C2A3F7C1443415200237253 /* EditLocation.png */,
 				4C10100D143F3870001875E2 /* 101-gameplan.png */,
 				4CD0043F1420CAC300B2C159 /* ArcGIS.bundle */,
 				4CD0043D1420CAA500B2C159 /* MobileCoreServices.framework */,
@@ -271,6 +286,11 @@
 				4CD004301420C93600B2C159 /* 74-location.png in Resources */,
 				4CD004401420CAC300B2C159 /* ArcGIS.bundle in Resources */,
 				4C10100E143F3870001875E2 /* 101-gameplan.png in Resources */,
+				4C2A3F721443365200237253 /* 186-ruler.png in Resources */,
+				4C2A3F751443392400237253 /* clearsketchX.gif in Resources */,
+				4C2A3F7A1443411E00237253 /* LeftArrow.png in Resources */,
+				4C2A3F7B1443411E00237253 /* RightArrow.png in Resources */,
+				4C2A3F7D1443415200237253 /* EditLocation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

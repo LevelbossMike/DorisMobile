@@ -10,17 +10,48 @@
 
 @implementation ViewController
 @synthesize mapView = _mapView;
+@synthesize sketchToolbar;
+@synthesize tiptoolbar;
+@synthesize toolbartip;
+@synthesize undoButton;
+@synthesize redoButton;
+@synthesize clearButton;
 @synthesize tiledLayer = _tiledLayer;
 @synthesize sketchLyr = _sketchLyr;
 @synthesize locationStatusEnabled;
 @synthesize sketchLayerEnabled;
 
+- (IBAction)undo:(id)sender {
+    if([_sketchLyr.undoManager canUndo]) //extra check, just to be sure
+		[_sketchLyr.undoManager undo];
+}
+- (IBAction)redo:(id)sender {
+    if([_sketchLyr.undoManager canRedo]) //extra check, just to be sure
+		[_sketchLyr.undoManager redo];
+    
+}
+- (IBAction)clear:(id)sender {
+    [_sketchLyr clear];
+    
+}
+
 -(IBAction)toggleSketchLayer:(id)sender 
 {
+
     if (self.sketchLayerEnabled == YES)
-    {
+    {   
+        // hide toolbar with a fade effect
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut ];
+        [sketchToolbar setAlpha:0.0];
+        [tiptoolbar setAlpha:0.0];
+        [toolbartip setAlpha:0.0];
+        [UIView commitAnimations];
         self.sketchLyr.geometry = nil;
         self.sketchLayerEnabled = NO;
+        // go back to 'normal' touch behaviour on the map 
+        self.mapView.touchDelegate = nil;
     }
     else
     {
@@ -30,6 +61,15 @@
             self.sketchLyr = [[AGSSketchGraphicsLayer alloc] initWithGeometry:nil];   
             [self.mapView addMapLayer:self.sketchLyr withName:@"Sketch Layer"];
         }
+        // show toolbar with a fade effect
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut ];
+        [sketchToolbar setAlpha:1.0];
+        [tiptoolbar setAlpha:1.0];
+        [toolbartip setAlpha:1.0];
+        
+        [UIView commitAnimations];
         
         AGSMutablePolygon *sketchPolygon = [[AGSMutablePolygon alloc] initWithSpatialReference:self.mapView.spatialReference];
         self.sketchLyr.geometry = sketchPolygon;
@@ -108,6 +148,14 @@
 
 - (void)viewDidUnload
 {
+    [self setSketchToolbar:nil];
+    [self setToolbartip:nil];
+    [self setToolbartip:nil];
+    [self setTiptoolbar:nil];
+    [self setUndoButton:nil];
+    [self setUndoButton:nil];
+    [self setRedoButton:nil];
+    [self setClearButton:nil];
     [super viewDidUnload];
     self.mapView = nil;
     // Release any retained subviews of the main view.
