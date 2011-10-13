@@ -21,20 +21,70 @@
 @synthesize locationStatusEnabled;
 @synthesize sketchLayerEnabled;
 
-- (IBAction)measureArea:(id)sender {
+- (IBAction)measureSketch:(id)sender {
+    // map unit is in metres, see Rest-Resource -> 'esrimetres'
     if (self.sketchLyr.geometry) {
         AGSGeometry *sketch = self.sketchLyr.geometry;
+        double result = 0;
+        NSString *unit = @"";
         AGSGeometryEngine *calculationEngine = [AGSGeometryEngine alloc];
-        double area = [calculationEngine areaOfGeometry:sketch];
-        // area is negative when sketching counter clockwise
-        if (area < 0) {
-            area = area * (-1);
+        if ([sketch isKindOfClass:[AGSMutablePolygon class]]) {
+            unit = @"Quadratmeter";
+            result = [calculationEngine areaOfGeometry:sketch];
+            // area is negative when sketching counter clockwise
+            if (result < 0) {
+                result = result * (-1);
+            
+            }
         }
-        // map unit is in metres, see Rest-Resource -> 'esrimetres'
-        toolbartip.text = [NSString stringWithFormat:@"%f Quadratmeter", area];
+        else {
+            unit = @"Meter";
+            result = [calculationEngine  lengthOfGeometry:sketch];
+        }
+        toolbartip.text = [NSString stringWithFormat:@"%f %@", result, unit];
     }
         
 
+}
+- (IBAction)togglePolylineSketch:(id)sender {
+    if (self.sketchLayerEnabled == YES)
+    {   
+        // hide toolbar with a fade effect
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut ];
+        [sketchToolbar setAlpha:0.0];
+        [tiptoolbar setAlpha:0.0];
+        [toolbartip setAlpha:0.0];
+        [UIView commitAnimations];
+        self.sketchLyr.geometry = nil;
+        self.sketchLayerEnabled = NO;
+        // go back to 'normal' touch behaviour on the map 
+        self.mapView.touchDelegate = nil;
+    }
+    else
+    {
+        self.sketchLayerEnabled = YES;
+        if ( self.sketchLyr == nil)
+        {
+            self.sketchLyr = [[AGSSketchGraphicsLayer alloc] initWithGeometry:nil]; 
+            [self.mapView addMapLayer:self.sketchLyr withName:@"Sketch Layer"];
+        }
+        // show toolbar with a fade effect
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut ];
+        [sketchToolbar setAlpha:1.0];
+        [tiptoolbar setAlpha:1.0];
+        [toolbartip setAlpha:1.0];
+        
+        [UIView commitAnimations];
+        
+        AGSMutablePolyline *sketchPolyline = [[AGSMutablePolyline alloc] initWithSpatialReference:self.mapView.spatialReference];
+        self.sketchLyr.geometry = sketchPolyline;
+        self.mapView.touchDelegate = self.sketchLyr;   
+    }
+    
 }
 
 - (IBAction)undo:(id)sender {

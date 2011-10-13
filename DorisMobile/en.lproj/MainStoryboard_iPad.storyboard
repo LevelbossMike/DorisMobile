@@ -30,10 +30,16 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HIg-g1-BuY"/>
                                     <barButtonItem image="186-ruler.png" style="plain" id="xC3-BH-VGC">
                                         <connections>
-                                            <action selector="measureArea:" destination="2" id="G2v-tb-fVE"/>
+                                            <action selector="measureSketch:" destination="2" id="etC-hL-ar8"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="21" style="plain" systemItem="fixedSpace" id="MII-q1-nwm"/>
+                                    <barButtonItem image="55-network.png" style="plain" id="iPF-uh-9nK">
+                                        <connections>
+                                            <action selector="togglePolylineSketch:" destination="2" id="VWo-lZ-QYc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="21" style="plain" systemItem="fixedSpace" id="rcd-J0-Un3"/>
                                     <barButtonItem image="EditLocation.png" style="plain" id="WaZ-pp-B41">
                                         <connections>
                                             <action selector="toggleSketchLayer:" destination="2" id="4BR-V0-BSc"/>
@@ -101,11 +107,12 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1195" y="-285"/>
+            <point key="canvasLocation" x="-1227" y="-273"/>
         </scene>
     </scenes>
     <resources>
         <image name="186-ruler.png" width="23" height="23"/>
+        <image name="55-network.png" width="24" height="24"/>
         <image name="74-location.png" width="20" height="20"/>
         <image name="EditLocation.png" width="20" height="20"/>
         <image name="LeftArrow.png" width="16" height="17"/>
