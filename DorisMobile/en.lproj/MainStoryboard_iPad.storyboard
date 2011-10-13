@@ -39,11 +39,21 @@
                                             <action selector="toggleSketchLayer:" destination="2" id="4BR-V0-BSc"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="26" style="plain" systemItem="fixedSpace" id="TvL-M7-joL"/>
+                                    <barButtonItem width="19" style="plain" systemItem="fixedSpace" id="TvL-M7-joL"/>
                                     <barButtonItem image="74-location.png" style="plain" id="RbU-zo-jeg">
                                         <connections>
                                             <action selector="toggleLocationService:" destination="2" id="Dtm-E0-a84"/>
                                         </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="cxC-tP-y0q">
+                                        <searchBar key="customView" contentMode="redraw" placeholder="Adresse" id="dd6-6H-K9d">
+                                            <rect key="frame" x="581" y="0.0" width="175" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="2" id="xrr-W3-GXp"/>
+                                            </connections>
+                                        </searchBar>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -100,6 +110,7 @@
                         <outlet property="clearButton" destination="wcE-wR-vRn" id="miQ-0l-WLL"/>
                         <outlet property="mapView" destination="jae-Ka-g13" id="JK3-uD-nds"/>
                         <outlet property="redoButton" destination="Yni-ox-v6c" id="byT-6q-dQw"/>
+                        <outlet property="searchBar" destination="dd6-6H-K9d" id="KwE-kt-FQZ"/>
                         <outlet property="sketchToolbar" destination="ejN-Lm-AGF" id="V7m-I2-Adr"/>
                         <outlet property="tiptoolbar" destination="avq-Mg-0VI" id="gIb-XV-Csg"/>
                         <outlet property="toolbartip" destination="8ZF-Jq-iQ3" id="dJP-fE-dCM"/>
@@ -133,6 +144,7 @@
                 <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mapView" candidateClass="AGSMapView"/>
                 <relationship kind="outlet" name="redoButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="sketchToolbar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="tiptoolbar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="toolbartip" candidateClass="UILabel"/>

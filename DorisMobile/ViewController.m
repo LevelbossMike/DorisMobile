@@ -9,6 +9,9 @@
 #import "ViewController.h"
 
 @implementation ViewController
+//The geocode service
+static NSString *kGeoLocatorURL = @"http://agstest.doris.at/ArcGIS/rest/services/Basisdaten/GeoSuche/MapServer";
+
 @synthesize mapView = _mapView;
 @synthesize sketchToolbar;
 @synthesize tiptoolbar;
@@ -21,8 +24,13 @@
 @synthesize sketchLyr = _sketchLyr;
 @synthesize locationStatusEnabled;
 @synthesize sketchLayerEnabled;
+@synthesize searchBar = _searchBar;
 @synthesize popoverController;
 @synthesize layerOptionController;
+
+@synthesize graphicsLayer = _graphicsLayer;
+@synthesize locator = _locator;
+@synthesize calloutTemplate = _calloutTemplate;
 
 - (IBAction)togglePopoverController:(id)sender {
     if ([popoverController isPopoverVisible]) {
@@ -237,6 +245,10 @@
     popoverController = [[UIPopoverController alloc] initWithContentViewController:layerOptionController];
     
     popoverController.popoverContentSize = CGSizeMake(250, 300);
+    //create the graphics layer that the geocoding result
+    //will be stored in and add it to the map
+    self.graphicsLayer = [AGSGraphicsLayer graphicsLayer];
+    [self.mapView addMapLayer:self.graphicsLayer withName:@"Graphics Layer"];
 
 }
 
@@ -270,6 +282,7 @@
     [self setRedoButton:nil];
     [self setClearButton:nil];
     [self setChangeLayerButton:nil];
+    [self setSearchBar:nil];
     [super viewDidUnload];
     self.mapView = nil;
     // Release any retained subviews of the main view.
@@ -305,6 +318,184 @@
     } else {
         return YES;
     }
+}
+
+- (void)startGeocoding {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tut mir leid!"
+                                                    message:@"Das funktioniert leider noch nicht."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+    /*
+    //clear out previous results
+    [self.graphicsLayer removeAllGraphics];
+    
+    //create the AGSLocator with the geo locator URL
+    //and set the delegate to self, so we get AGSLocatorDelegate notifications
+    self.locator = [AGSLocator locatorWithURL:[NSURL URLWithString:kGeoLocatorURL]];
+    self.locator.delegate = self;
+    
+    //we want all out fields
+    //Note that the "*" for out fields is supported for geocode services of
+    //ArcGIS Server 10 and above
+    //NSArray *outFields = [NSArray arrayWithObject:@"*"];
+    
+    //for pre-10 ArcGIS Servers, you need to specify all the out fields:
+    NSArray *outFields = [NSArray arrayWithObjects:@"Loc_name",
+                          @"Shape",
+                          @"Score",
+                          @"Name",
+                          @"Rank",
+                          @"Match_addr",
+                          @"Descr",
+                          @"Latitude",
+                          @"Longitude",
+                          @"City",
+                          @"County",
+                          @"State",
+                          @"State_Abbr",
+                          @"Country",
+                          @"Cntry_Abbr",
+                          @"Type",
+                          @"North_Lat",
+                          @"South_Lat",
+                          @"West_Lon",
+                          @"East_Lon",
+                          nil];
+    
+    //Create the address dictionary with the contents of the search bar
+    NSDictionary *addresses = [NSDictionary dictionaryWithObjectsAndKeys:self.searchBar.text, @"PlaceName", nil];
+    
+    //now request the location from the locator for our address
+    [self.locator locationsForAddress:addresses returnFields:outFields];*/
+}
+#pragma mark _
+#pragma mark UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	
+	//hide the callout
+	self.mapView.callout.hidden = YES;
+	
+    //First, hide the keyboard, then starGeocoding
+    [searchBar resignFirstResponder];
+    [self startGeocoding];
+}
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    //hide the keyboard
+    [searchBar resignFirstResponder];
+}
+
+//geocoding
+- (void)locator:(AGSLocator *)locator operation:(NSOperation *)op didFindLocationsForAddress:(NSArray *)candidates
+{
+    //check and see if we didn't get any results
+	if (candidates == nil || [candidates count] == 0)
+	{
+        //show alert if we didn't get results
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Results"
+                                                        message:@"No Results Found By Locator"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+	}
+	else
+	{
+        //use these to calculate extent of results
+        double xmin = DBL_MAX;
+        double ymin = DBL_MAX;
+        double xmax = -DBL_MAX;
+        double ymax = -DBL_MAX;
+		
+		//create the callout template, used when the user displays the callout
+		//self.calloutTemplate = [[[AGSCalloutTemplate alloc]init] autorelease];
+        
+        //loop through all candidates/results and add to graphics layer
+		for (int i=0; i<[candidates count]; i++)
+		{            
+			AGSAddressCandidate *addressCandidate = (AGSAddressCandidate *)[candidates objectAtIndex:i];
+            
+            //get the location from the candidate
+            AGSPoint *pt = addressCandidate.location;
+            
+            //accumulate the min/max
+            if (pt.x  < xmin)
+                xmin = pt.x;
+            
+            if (pt.x > xmax)
+                xmax = pt.x;
+            
+            if (pt.y < ymin)
+                ymin = pt.y;
+            
+            if (pt.y > ymax)
+                ymax = pt.y;
+            
+			//create a marker symbol to use in our graphic
+            AGSPictureMarkerSymbol *marker = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"BluePushpin.png"];
+            marker.xoffset = 9;
+            marker.yoffset = -16;
+            marker.hotspot = CGPointMake(-9, -11);
+            
+            //set the text and detail text based on 'Name' and 'Descr' fields in the attributes
+            self.calloutTemplate.titleTemplate = @"${Name}";
+            self.calloutTemplate.detailTemplate = @"${Descr}";
+			
+            //create the graphic
+			AGSGraphic *graphic = [[AGSGraphic alloc] initWithGeometry: pt
+																symbol:marker 
+															attributes:[addressCandidate.attributes mutableCopy]
+                                                  infoTemplateDelegate:self.calloutTemplate];
+            
+            
+            //add the graphic to the graphics layer
+			[self.graphicsLayer addGraphic:graphic];
+            
+            if ([candidates count] == 1)
+            {
+                //we have one result, center at that point
+                [self.mapView centerAtPoint:pt animated:NO];
+                
+				// set the width of the callout
+				self.mapView.callout.width = 250;
+                
+                //show the callout
+                [self.mapView showCalloutAtPoint:(AGSPoint *)graphic.geometry forGraphic:graphic animated:YES];
+            }
+			      
+		}
+        
+        //if we have more than one result, zoom to the extent of all results
+        int nCount = [candidates count];
+        if (nCount > 1)
+        {            
+            AGSMutableEnvelope *extent = [AGSMutableEnvelope envelopeWithXmin:xmin ymin:ymin xmax:xmax ymax:ymax spatialReference:self.mapView.spatialReference];
+            [extent expandByFactor:1.5];
+			[self.mapView zoomToEnvelope:extent animated:YES];
+        }
+	}
+    
+    //since we've added graphics, make sure to redraw
+    [self.graphicsLayer dataChanged];
+    
+}
+
+- (void)locator:(AGSLocator *)locator operation:(NSOperation *)op didFailLocationsForAddress:(NSError *)error
+{
+    //The location operation failed, display the error
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Locator Failed"
+                                                    message:[NSString stringWithFormat:@"Error: %@", error.description]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"                                          
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 @end

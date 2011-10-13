@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DorisMobile/ViewController.m"
-         timestampString = "340216022.921171"
+         timestampString = "340228648.339607"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "147"
-         endingLineNumber = "147"
+         startingLineNumber = "155"
+         endingLineNumber = "155"
          landmarkName = "-toggleSketchLayer:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DorisMobile/ViewController.m"
-         timestampString = "340199484.744437"
+         timestampString = "340228648.339607"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-measureSketch:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -37,12 +37,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DorisMobile/ViewController.m"
-         timestampString = "340224328.023791"
+         timestampString = "340228648.339607"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "252"
-         endingLineNumber = "252"
+         startingLineNumber = "264"
+         endingLineNumber = "264"
          landmarkName = "-mapView:didTapAndHoldAtPoint:mapPoint:graphics:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DorisMobile/ViewController.m"
+         timestampString = "340229762.625838"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "383"
+         endingLineNumber = "383"
+         landmarkName = "-searchBarSearchButtonClicked:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

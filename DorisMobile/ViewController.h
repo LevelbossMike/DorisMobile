@@ -11,7 +11,7 @@
 #import "LayerOptionController.h"
 
 
-@interface ViewController : UIViewController <AGSMapViewLayerDelegate, LayerOptionControllerDelegate, AGSMapViewTouchDelegate>
+@interface ViewController : UIViewController <AGSMapViewLayerDelegate, LayerOptionControllerDelegate, AGSMapViewTouchDelegate, UISearchBarDelegate, AGSLocatorDelegate>
 @property (nonatomic, retain) IBOutlet AGSMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *sketchToolbar;
 @property (weak, nonatomic) IBOutlet UIToolbar *tiptoolbar;
@@ -22,8 +22,12 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *changeLayerButton;
 @property (nonatomic, retain) AGSTiledMapServiceLayer *tiledLayer;
 @property (nonatomic, retain) AGSSketchGraphicsLayer *sketchLyr;
+@property (nonatomic, retain) AGSGraphicsLayer *graphicsLayer;
+@property (nonatomic, retain) AGSLocator *locator;
+@property (nonatomic, retain) AGSCalloutTemplate *calloutTemplate;
 @property BOOL locationStatusEnabled;
 @property BOOL sketchLayerEnabled;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @property (nonatomic, retain) LayerOptionController *layerOptionController;
@@ -32,6 +36,7 @@
 -(IBAction)toggleLocationService:(id)sender;
 -(IBAction)toggleSketchLayer:(id)sender;
 -(void)clearSketch;
+-(void)startGeocoding;
 
 
 @end
