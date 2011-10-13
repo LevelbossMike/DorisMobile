@@ -14,6 +14,7 @@
 		4C2A3F7B1443411E00237253 /* RightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A3F791443411E00237253 /* RightArrow.png */; };
 		4C2A3F7D1443415200237253 /* EditLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A3F7C1443415200237253 /* EditLocation.png */; };
 		4C32B6C21446EAA600A3ED12 /* 55-network.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C32B6C11446EAA600A3ED12 /* 55-network.png */; };
+		4C32B6D3144704E100A3ED12 /* LayerOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C32B6D1144704E100A3ED12 /* LayerOptionController.m */; };
 		4CD003F41420C90100B2C159 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F31420C90100B2C159 /* UIKit.framework */; };
 		4CD003F61420C90100B2C159 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F51420C90100B2C159 /* Foundation.framework */; };
 		4CD003F81420C90100B2C159 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD003F71420C90100B2C159 /* CoreGraphics.framework */; };
@@ -58,6 +59,8 @@
 		4C2A3F791443411E00237253 /* RightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RightArrow.png; path = ../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/resources/ArcGIS.bundle/RightArrow.png; sourceTree = "<group>"; };
 		4C2A3F7C1443415200237253 /* EditLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EditLocation.png; path = ../../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/resources/ArcGIS.bundle/EditLocation.png; sourceTree = "<group>"; };
 		4C32B6C11446EAA600A3ED12 /* 55-network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55-network.png"; sourceTree = "<group>"; };
+		4C32B6D0144704E100A3ED12 /* LayerOptionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerOptionController.h; sourceTree = "<group>"; };
+		4C32B6D1144704E100A3ED12 /* LayerOptionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerOptionController.m; sourceTree = "<group>"; };
 		4CD003EF1420C90100B2C159 /* DorisMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DorisMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD003F31420C90100B2C159 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CD003F51420C90100B2C159 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				4CD004081420C90100B2C159 /* MainStoryboard_iPad.storyboard */,
 				4CD0040B1420C90100B2C159 /* ViewController.h */,
 				4CD0040C1420C90100B2C159 /* ViewController.m */,
+				4C32B6D0144704E100A3ED12 /* LayerOptionController.h */,
+				4C32B6D1144704E100A3ED12 /* LayerOptionController.m */,
 				4CD003FA1420C90100B2C159 /* Supporting Files */,
 			);
 			path = DorisMobile;
@@ -332,6 +337,7 @@
 				4CD004001420C90100B2C159 /* main.m in Sources */,
 				4CD004041420C90100B2C159 /* AppDelegate.m in Sources */,
 				4CD0040D1420C90100B2C159 /* ViewController.m in Sources */,
+				4C32B6D3144704E100A3ED12 /* LayerOptionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

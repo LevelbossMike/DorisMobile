@@ -16,10 +16,26 @@
 @synthesize undoButton;
 @synthesize redoButton;
 @synthesize clearButton;
+@synthesize changeLayerButton;
 @synthesize tiledLayer = _tiledLayer;
 @synthesize sketchLyr = _sketchLyr;
 @synthesize locationStatusEnabled;
 @synthesize sketchLayerEnabled;
+@synthesize popoverController;
+@synthesize layerOptionController;
+
+- (IBAction)togglePopoverController:(id)sender {
+    if ([popoverController isPopoverVisible]) {
+        
+        [popoverController dismissPopoverAnimated:YES];
+        
+    } else {
+        
+        [popoverController presentPopoverFromBarButtonItem:changeLayerButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+    }
+}
+
 
 - (IBAction)measureSketch:(id)sender {
     // map unit is in metres, see Rest-Resource -> 'esrimetres'
@@ -145,13 +161,21 @@
     
 }
 
--(IBAction)changeLayer:(id)sender 
-{
-    //just do something
-    NSString *theString = [[NSString alloc]initWithFormat:@"This will be implemented later."];
-    UIAlertView *alertView = [[UIAlertView alloc]	initWithTitle:@"Important!" 
-                                                        message:theString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
+-(void)changeLayer:(NSString *)mapName  
+{   
+    NSString *mapUrlString = [[NSString alloc] initWithFormat:@"http://agstest.doris.at/ArcGIS/rest/services/Rasterdaten/%@/MapServer", mapName];
+    NSURL *mapUrl = [NSURL URLWithString:mapUrlString];
+    AGSTiledMapServiceLayer *tiledLyr = [AGSTiledMapServiceLayer tiledMapServiceLayerWithURL:mapUrl];
+    [self.mapView addMapLayer:tiledLyr withName:mapName];
+}
+
+// implemented for popover
+-(void)didTap:(NSString *)string {
+    /*UIAlertView *alertView = [[UIAlertView alloc]	initWithTitle:@"Important!"
+                                                        message:string delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];*/
+    [popoverController dismissPopoverAnimated:YES];
+    [self changeLayer:string];
 }
 
 -(IBAction)toggleLocationService:(id)sender
@@ -203,6 +227,14 @@
     AGSEnvelope *env = [AGSEnvelope envelopeWithXmin:-66388.1974430619 ymin:270562.472437908 xmax:142103.886207772 ymax:408531.059337051 spatialReference:sr];
     NSLog(@"mapView units: %@", AGSUnitsDisplayString(self.mapView.units));
     [self.mapView zoomToEnvelope:env animated:YES];
+    
+    // popover controller
+    layerOptionController = [LayerOptionController alloc];
+    layerOptionController.delegate = self;
+    
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:layerOptionController];
+    
+    popoverController.popoverContentSize = CGSizeMake(250, 300);
     /*
     // add the default map
     NSURL *url = [NSURL URLWithString: @"http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer"]; 
@@ -237,6 +269,7 @@
     [self setUndoButton:nil];
     [self setRedoButton:nil];
     [self setClearButton:nil];
+    [self setChangeLayerButton:nil];
     [super viewDidUnload];
     self.mapView = nil;
     // Release any retained subviews of the main view.
