@@ -11,7 +11,7 @@
 #import "LayerOptionController.h"
 
 
-@interface ViewController : UIViewController <AGSMapViewLayerDelegate, LayerOptionControllerDelegate>
+@interface ViewController : UIViewController <AGSMapViewLayerDelegate, LayerOptionControllerDelegate, AGSMapViewTouchDelegate>
 @property (nonatomic, retain) IBOutlet AGSMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *sketchToolbar;
 @property (weak, nonatomic) IBOutlet UIToolbar *tiptoolbar;
@@ -31,6 +31,7 @@
 -(IBAction)changeLayer:(id)sender;
 -(IBAction)toggleLocationService:(id)sender;
 -(IBAction)toggleSketchLayer:(id)sender;
+-(void)clearSketch;
 
 
 @end

@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DorisMobile/ViewController.m"
-         timestampString = "340199484.744437"
+         timestampString = "340216022.921171"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
+         startingLineNumber = "147"
+         endingLineNumber = "147"
          landmarkName = "-toggleSketchLayer:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -29,6 +29,20 @@
          startingLineNumber = "47"
          endingLineNumber = "47"
          landmarkName = "-measureSketch:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DorisMobile/ViewController.m"
+         timestampString = "340224328.023791"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
+         landmarkName = "-mapView:didTapAndHoldAtPoint:mapPoint:graphics:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

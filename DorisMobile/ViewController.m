@@ -73,10 +73,10 @@
         [tiptoolbar setAlpha:0.0];
         [toolbartip setAlpha:0.0];
         [UIView commitAnimations];
-        self.sketchLyr.geometry = nil;
+        [self clearSketch];
         self.sketchLayerEnabled = NO;
         // go back to 'normal' touch behaviour on the map 
-        self.mapView.touchDelegate = nil;
+        self.mapView.touchDelegate = self;
     }
     else
     {
@@ -113,8 +113,11 @@
     
 }
 - (IBAction)clear:(id)sender {
-    [_sketchLyr clear];
-    
+    [self clearSketch];
+}
+- (void)clearSketch {
+    [self.sketchLyr clear];
+    toolbartip.text = @"Bitte auf die Karte tippen, um einen Punkt hinzuzufügen";
 }
 
 -(IBAction)toggleSketchLayer:(id)sender 
@@ -130,10 +133,10 @@
         [tiptoolbar setAlpha:0.0];
         [toolbartip setAlpha:0.0];
         [UIView commitAnimations];
-        self.sketchLyr.geometry = nil;
+        [self clearSketch];
         self.sketchLayerEnabled = NO;
         // go back to 'normal' touch behaviour on the map 
-        self.mapView.touchDelegate = nil;
+        self.mapView.touchDelegate = self;
     }
     else
     {
@@ -171,9 +174,6 @@
 
 // implemented for popover
 -(void)didTap:(NSString *)string {
-    /*UIAlertView *alertView = [[UIAlertView alloc]	initWithTitle:@"Important!"
-                                                        message:string delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];*/
     [popoverController dismissPopoverAnimated:YES];
     [self changeLayer:string];
 }
@@ -227,6 +227,8 @@
     AGSEnvelope *env = [AGSEnvelope envelopeWithXmin:-66388.1974430619 ymin:270562.472437908 xmax:142103.886207772 ymax:408531.059337051 spatialReference:sr];
     NSLog(@"mapView units: %@", AGSUnitsDisplayString(self.mapView.units));
     [self.mapView zoomToEnvelope:env animated:YES];
+    // to be able to react to touch events on the map
+    self.mapView.touchDelegate = self;
     
     // popover controller
     layerOptionController = [LayerOptionController alloc];
@@ -235,25 +237,23 @@
     popoverController = [[UIPopoverController alloc] initWithContentViewController:layerOptionController];
     
     popoverController.popoverContentSize = CGSizeMake(250, 300);
-    /*
-    // add the default map
-    NSURL *url = [NSURL URLWithString: @"http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer"]; 
-    AGSTiledMapServiceLayer *layer = [AGSTiledMapServiceLayer tiledMapServiceLayerWithURL: url];
-    self.tiledLayer = layer;
+
+}
+
+- (void)mapView:(AGSMapView *)mapView didTapAndHoldAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint graphics:(NSDictionary *)graphics 
+{   
+    NSString *coordsString = [[NSString alloc] initWithFormat:@"X: %f Y: %f", mappoint.x, mappoint.y];
+    mapView.callout.title = @"Koordinaten für diesen Punkt";
+    mapView.callout.detail = coordsString; 
+    mapView.callout.image = [UIImage imageNamed:@"icon_small.png"];
+    mapView.callout.accessoryButtonHidden = YES;
     
-    [self.mapView addMapLayer:self.tiledLayer withName:@"Tiled Layer"];
-    self.mapView.layerDelegate = self;
-    [ self.mapView.gps addObserver:self
-                        forKeyPath:@"currentPoint"
-                           options:(NSKeyValueObservingOptionNew)
-                           context:NULL];*/
+    //Display the callout
+    [mapView showCalloutAtPoint: mappoint];
 }
 
 // method that gets called when the map view has been loaded 
 - (void)mapViewDidLoad:(AGSMapView *)mapView {
-    //create extent to be used as default
-    /*AGSEnvelope *envelope = [AGSEnvelope envelopeWithXmin:0.0 ymin:0.0 xmax:0.06 ymax:0.06  spatialReference:mapView.spatialReference];
-    [self.mapView zoomToEnvelope:envelope animated:NO];*/
     /*//center map with linz as centerpoint
     AGSPoint *newPoint = [AGSPoint pointWithX:14.290123 y:48.284792 spatialReference:self.mapView.spatialReference];
     [self.mapView centerAtPoint:newPoint animated:NO];*/
