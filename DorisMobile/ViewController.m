@@ -21,6 +21,22 @@
 @synthesize locationStatusEnabled;
 @synthesize sketchLayerEnabled;
 
+- (IBAction)measureArea:(id)sender {
+    if (self.sketchLyr.geometry) {
+        AGSGeometry *sketch = self.sketchLyr.geometry;
+        AGSGeometryEngine *calculationEngine = [AGSGeometryEngine alloc];
+        double area = [calculationEngine areaOfGeometry:sketch];
+        // area is negative when sketching counter clockwise
+        if (area < 0) {
+            area = area * (-1);
+        }
+        // map unit is in metres, see Rest-Resource -> 'esrimetres'
+        toolbartip.text = [NSString stringWithFormat:@"%f Quadratmeter", area];
+    }
+        
+
+}
+
 - (IBAction)undo:(id)sender {
     if([_sketchLyr.undoManager canUndo]) //extra check, just to be sure
 		[_sketchLyr.undoManager undo];
@@ -58,7 +74,7 @@
         self.sketchLayerEnabled = YES;
         if ( self.sketchLyr == nil)
         {
-            self.sketchLyr = [[AGSSketchGraphicsLayer alloc] initWithGeometry:nil];   
+            self.sketchLyr = [[AGSSketchGraphicsLayer alloc] initWithGeometry:nil]; 
             [self.mapView addMapLayer:self.sketchLyr withName:@"Sketch Layer"];
         }
         // show toolbar with a fade effect
@@ -98,6 +114,7 @@
     else
     {
         self.locationStatusEnabled = YES;
+        self.mapView.gps.autoPan = true;
         [self.mapView.gps start];
     }
     
@@ -108,7 +125,6 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
     if ([keyPath isEqual:@"currentPoint"]) {
-        NSLog(@"Location updated to %@", self.mapView.gps.currentPoint);
         [self.mapView centerAtPoint:self.mapView.gps.currentPoint animated:YES];
     }
 }
@@ -126,24 +142,39 @@
     [super viewDidLoad];
     // to be able to toogle location status
     self.locationStatusEnabled = NO;
+    // turn of sketch layer on start
     self.sketchLayerEnabled = NO;
-    self.tiledLayer = [[AGSTiledMapServiceLayer alloc] initWithURL:[NSURL URLWithString:@"http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer"]];
+    NSURL *mapUrl = [NSURL URLWithString:@"http://agstest.doris.at/ArcGIS/rest/services/Rasterdaten/Oek/MapServer"];
+    AGSTiledMapServiceLayer *tiledLyr = [AGSTiledMapServiceLayer tiledMapServiceLayerWithURL:mapUrl];
+    [self.mapView addMapLayer:tiledLyr withName:@"Tiled Layer"];
+    // you can get the wkid of a map when looking at the REST-Resource of a map
+    AGSSpatialReference *sr = [AGSSpatialReference spatialReferenceWithWKID:31255];
+    // you can get xmin to ymax for envelope when looking at REST-Resource of a map
+    AGSEnvelope *env = [AGSEnvelope envelopeWithXmin:-66388.1974430619 ymin:270562.472437908 xmax:142103.886207772 ymax:408531.059337051 spatialReference:sr];
+    NSLog(@"mapView units: %@", AGSUnitsDisplayString(self.mapView.units));
+    [self.mapView zoomToEnvelope:env animated:YES];
+    /*
+    // add the default map
+    NSURL *url = [NSURL URLWithString: @"http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer"]; 
+    AGSTiledMapServiceLayer *layer = [AGSTiledMapServiceLayer tiledMapServiceLayerWithURL: url];
+    self.tiledLayer = layer;
+    
     [self.mapView addMapLayer:self.tiledLayer withName:@"Tiled Layer"];
     self.mapView.layerDelegate = self;
     [ self.mapView.gps addObserver:self
                         forKeyPath:@"currentPoint"
                            options:(NSKeyValueObservingOptionNew)
-                           context:NULL];
+                           context:NULL];*/
 }
 
 // method that gets called when the map view has been loaded 
 - (void)mapViewDidLoad:(AGSMapView *)mapView {
     //create extent to be used as default
-    AGSEnvelope *envelope = [AGSEnvelope envelopeWithXmin:0.0 ymin:0.0 xmax:0.06 ymax:0.06  spatialReference:mapView.spatialReference];
-    [self.mapView zoomToEnvelope:envelope animated:NO];
-    //center map with linz as centerpoint
+    /*AGSEnvelope *envelope = [AGSEnvelope envelopeWithXmin:0.0 ymin:0.0 xmax:0.06 ymax:0.06  spatialReference:mapView.spatialReference];
+    [self.mapView zoomToEnvelope:envelope animated:NO];*/
+    /*//center map with linz as centerpoint
     AGSPoint *newPoint = [AGSPoint pointWithX:14.290123 y:48.284792 spatialReference:self.mapView.spatialReference];
-    [self.mapView centerAtPoint:newPoint animated:NO];
+    [self.mapView centerAtPoint:newPoint animated:NO];*/
 }
 
 - (void)viewDidUnload
